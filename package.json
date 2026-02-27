@@ -25,5 +25,8 @@
   },
   "bugs": {
     "url": "https://github.com/NaughtySora/async-locks/issues"
+  },
+  "devDependencies": {
+    "naughty-util": "^0.6.3"
   }
 }
