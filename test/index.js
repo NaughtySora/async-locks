@@ -3,7 +3,7 @@
 const assert = require('node:assert/strict');
 const { describe, it } = require('node:test');
 const { misc, async } = require("naughty-util");
-const Semaphore = require('../lib/Semaphore');
+const Semaphore = require('../lib/Semaphore.js');
 
 const CONCURRENCY = 2;
 const TEST_COUNT = 10000;

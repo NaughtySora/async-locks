@@ -16,7 +16,7 @@
     "main.d.ts"
   ],
   "scripts": {
-    "test": "node test/index.js"
+    "test": "c8 node test/index.js"
   },
   "homepage": "https://github.com/NaughtySora/async-locks#readme",
   "repository": {
@@ -27,6 +27,7 @@
     "url": "https://github.com/NaughtySora/async-locks/issues"
   },
   "devDependencies": {
-    "naughty-util": "^0.6.3"
+    "naughty-util": "^0.6.3",
+    "c8": "^11.0.0"
   }
 }
