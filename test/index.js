@@ -21,7 +21,6 @@ const raceCondition = async (min, max) => {
 Object.assign(raceCondition, { count: 0 });
 
 describe('Semaphore', async () => {
-
   await it('enter - leave', async () => {
     const lock = new Semaphore(CONCURRENCY);
     const test = async () => {
@@ -49,18 +48,28 @@ describe('Semaphore', async () => {
     assert.equal(errors, 0);
   });
 
-  // await it('isolate', async () => {
-  //   await lock.isolate(raceCondition, { args: [0, 0] });
-  // });
+  await it('isolate', async () => {
+    const lock = new Semaphore(CONCURRENCY);
+    await Promise.all(Array.from(
+      { length: TEST_COUNT },
+      lock.isolate.bind(lock, raceCondition, { args: [0, 0] }),
+    ));
+  });
 
-  // await it('isolate - signal', async () => {
-  //   const errors = [];
-  //   try {
-  //     await lock.isolate(raceCondition, {
-  //       args: [0, 0],
-  //       signal: AbortSignal.timeout(misc.random(5000, 100))
-  //     });
-  //   } catch (e) { }
-  // });
+  await it('isolate - signal', async () => {
+    const lock = new Semaphore(CONCURRENCY);
+    let errors = 0;
+    const test = async () => {
+      const delay = misc.random(5000, 100);
+      const signal = AbortSignal.timeout(delay);
+      try {
+        return await lock.isolate(raceCondition, { args: [0, 0], signal, });
+      } catch (e) {
+        if (e.message === RACE_CONDITION_MESSAGE) errors++;
+      }
+    };
+    await Promise.all(Array.from({ length: TEST_COUNT }, test));
+    assert.equal(errors, 0);
+  });
 });
 
