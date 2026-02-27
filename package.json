@@ -1,0 +1,29 @@
+{
+  "name": "async-locks",
+  "version": "0.1.0",
+  "author": "NaughtySora <naughtysora@proton.me>",
+  "license": "MIT",
+  "description": "JavaScript Async primitives",
+  "exports": "./main.js",
+  "types": "main.d.ts",
+  "readmeFilename": "README.md",
+  "keywords": [
+    "async",
+    "locks",
+    "semaphore"
+  ],
+  "files": [
+    "main.d.ts"
+  ],
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "homepage": "https://github.com/NaughtySora/async-locks#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NaughtySora/async-locks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NaughtySora/async-locks/issues"
+  }
+}
