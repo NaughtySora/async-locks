@@ -13,7 +13,8 @@
     "semaphore"
   ],
   "files": [
-    "main.d.ts"
+    "main.d.ts",
+    "lib/"
   ],
   "scripts": {
     "test": "c8 node test/index.js"
