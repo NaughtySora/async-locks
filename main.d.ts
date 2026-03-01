@@ -14,6 +14,5 @@ export class Semaphore {
     callback: C,
     option?: IsolateOptions<C>
   ): Promise<ReturnType<C>>;
-  waiting: number;
   empty: boolean;
 }

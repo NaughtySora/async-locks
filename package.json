@@ -1,6 +1,6 @@
 {
   "name": "async-locks",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "NaughtySora <naughtysora@proton.me>",
   "license": "MIT",
   "description": "JavaScript Async primitives",
@@ -28,7 +28,8 @@
     "url": "https://github.com/NaughtySora/async-locks/issues"
   },
   "devDependencies": {
-    "naughty-util": "^0.6.3",
-    "c8": "^11.0.0"
+    "@types/node": "^25.3.3",
+    "c8": "^11.0.0",
+    "naughty-util": "^0.6.3"
   }
 }
