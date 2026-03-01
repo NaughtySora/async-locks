@@ -9,7 +9,6 @@ interface IsolateOptions<C extends AsyncCallback> {
 export class Semaphore {
   constructor(concurrency?: number);
   enter(signal?: AbortSignal): Promise<void>;
-  leave(): void;
   isolate<C extends AsyncCallback>(
     callback: C,
     option?: IsolateOptions<C>
